@@ -1,6 +1,6 @@
-local colors = require('ayu.colors')
-local config = require('ayu.config')
-local ayu = {}
+local colors = require('lux.colors')
+local config = require('lux.config')
+local lux = {}
 
 --- Apply terminal highlighting.
 local function set_terminal_colors()
@@ -84,7 +84,7 @@ local function set_groups()
     Type = { fg = colors.entity },
     Structure = { fg = colors.special },
     Special = { fg = colors.accent },
-    Delimiter = { fg = colors.special },
+    Delimiter = { fg = colors.delimiter },
     Underlined = { sp = colors.tag, underline = true },
     Ignore = { fg = colors.fg },
     Error = { fg = colors.white, bg = colors.error },
@@ -338,12 +338,12 @@ end
 
 --- Apply user settings.
 ---@param values table
-function ayu.setup(values) setmetatable(config, { __index = vim.tbl_extend('force', config.defaults, values) }) end
+function lux.setup(values) setmetatable(config, { __index = vim.tbl_extend('force', config.defaults, values) }) end
 
 --- Set the colorscheme.
-function ayu.colorscheme()
+function lux.colorscheme()
   if vim.version().minor < 8 then
-    vim.notify('Neovim 0.8+ is required for ayu colorscheme', vim.log.levels.ERROR, { title = 'Ayu colorscheme' })
+    vim.notify('Neovim 0.8+ is required for lux colorscheme', vim.log.levels.ERROR, { title = 'Ayu colorscheme' })
     return
   end
 
@@ -354,13 +354,13 @@ function ayu.colorscheme()
 
   vim.g.VM_theme_set_by_colorscheme = true -- Required for Visual Multi
   vim.o.termguicolors = true
-  vim.g.colors_name = 'ayu'
+  vim.g.colors_name = 'lux'
 
-  colors.generate(config.mirage)
+  colors.generate()
   if config.terminal then
     set_terminal_colors()
   end
   set_groups()
 end
 
-return ayu
+return lux

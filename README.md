@@ -1,26 +1,19 @@
-# Neovim Ayu
-
-A colorscheme for Neovim reimplemented in lua from [ayu-vim](https://github.com/Luxed/ayu-vim).
+# Neovim Lux
 
 ## Screenshots
 
 ![dark](screenshots/dark.png)
 
-![mirage](screenshots/mirage.png)
-
-![light](screenshots/light.png)
-
 ## Commands
 
-To apply the colorscheme, you can call `require('ayu').colorscheme()` from lua or use `:colorscheme ayu` command. By default it respects your `'background'` (see `:h background`) setting to choose between `dark` and `light` variants. But you can use the `:colorscheme ayu-dark`, `:colorscheme ayu-light`, or `:colorscheme ayu-mirage` commands to apply a variant directly.
+To apply the colorscheme, you can call `require('lux').colorscheme()` from lua or use `:colorscheme lux` command.
 
 ## Configuration
 
-To configure the plugin, you can call `require('ayu').setup(values)`, where `values` is a dictionary with the parameters you want to override. Here are the defaults:
+To configure the plugin, you can call `require('lux').setup(values)`, where `values` is a dictionary with the parameters you want to override. Here are the defaults:
 
 ```lua
-require('ayu').setup({
-    mirage = false, -- Set to `true` to use `mirage` variant instead of `dark` for dark background.
+require('lux').setup({
     terminal = true, -- Set to `false` to let terminal manage its own colors.
     overrides = {}, -- A dictionary of group names, each associated with a dictionary of parameters (`bg`, `fg`, `sp` and `style`) and colors in hex.
 })
@@ -33,7 +26,7 @@ Colorscheme also provides a theme for [lualine.nvim](https://github.com/nvim-lua
 ```lua
 require('lualine').setup({
   options = {
-    theme = 'ayu',
+    theme = 'lux',
   },
 })
 ```
@@ -43,7 +36,7 @@ require('lualine').setup({
 #### Transparency
 
 ```lua
-require('ayu').setup({
+require('lux').setup({
     overrides = {
         Normal = { bg = "None" },
         NormalFloat = { bg = "none" },
@@ -63,43 +56,37 @@ require('ayu').setup({
 #### Re-use colors from the colorscheme
 
 ```lua
-local colors = require('ayu.colors')
-colors.generate() -- Pass `true` to enable mirage
+local colors = require('lux.colors')
+colors.generate()
 
-require('ayu').setup({
+require('lux').setup({
   overrides = {
     IncSearch = { fg = colors.fg }
   }
 })
 ```
 
-**Tip:** You can use `:lua print(vim.inspect(require('ayu.colors')))` command to check all available colors.
+**Tip:** You can use `:lua print(vim.inspect(require('lux.colors')))` command to check all available colors.
 
 #### Set background color of non-active windows for both light and dark backgrounds
 
 In this case you need to use a function to dynamically generate colors:
 
 ```lua
-require('ayu').setup({
+require('lux').setup({
   overrides = function()
-    if vim.o.background == 'dark' then
-      return { NormalNC = {bg = '#0f151e', fg = '#808080'} }
-    else
-      return { NormalNC = {bg = '#f0f0f0', fg = '#808080'} }
-    end
+    return { NormalNC = {bg = '#0f151e', fg = '#808080'} }
   end
 })
 ```
 
-**Tip:** If you use `ayu.colors` as in the example above, you don't need to check for `vim.o.background`, but you still need to use a function.
-
 #### Disable _italic_ for comments
 
 ```lua
-local colors = require('ayu.colors')
-colors.generate() -- Pass `true` to enable mirage
+local colors = require('lux.colors')
+colors.generate()
 
-require('ayu').setup({
+require('lux').setup({
   overrides = function()
     return { Comment = { fg = colors.comment } }
   end
