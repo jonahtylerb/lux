@@ -322,11 +322,11 @@ function colors.generate()
   colors.panel_border = colors.black
   colors.gutter_normal = ui.gray[600]
   colors.gutter_active = ui.gray[400]
-  colors.selection_bg = ui.gray[800]
+  colors.selection_bg = ui.gray[700]
   colors.selection_inactive = ui.gray[900]
   colors.selection_border = ui.gray[400]
-  colors.guide_active = ui.gray[500]
-  colors.guide_normal = ui.gray[500]
+  colors.guide_active = ui.gray[700]
+  colors.guide_normal = ui.gray[700]
 
   colors.vcs_added = ui.green[500]
   colors.vcs_modified = ui.blue[500]
