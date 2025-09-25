@@ -1,3 +1,3 @@
 vim.o.background = 'dark'
-require('lux.config').variation = { ayu = true }
+require('lux.config').variation = { mono = true }
 require('lux').colorscheme()

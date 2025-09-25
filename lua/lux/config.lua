@@ -1,6 +1,10 @@
 local config = {
   defaults = {
-    teal = false,
+    variation = {
+      ayu = true,
+      teal = false,
+      mono = false,
+    },
     terminal = true,
     overrides = {},
   },

@@ -296,8 +296,8 @@ local ui = {
   },
 }
 
-function colors.generate(teal)
-  if teal then
+function colors.generate(variation)
+  if variation.teal then
     colors.accent = ui.teal[400]
     colors.bg = ui.gray[950]
     colors.fg = ui.gray[350]
@@ -315,9 +315,8 @@ function colors.generate(teal)
     colors.comment = ui.gray[600]
     colors.constant = ui.teal[500]
     colors.operator = ui.gray[300]
-    colors.error = ui.red[400]
     colors.lsp_parameter = ui.rose[500]
-  else
+  elseif variation.ayu then
     colors.accent = ui.orange[400]
     colors.bg = ui.gray[950]
     colors.fg = ui.gray[350]
@@ -335,10 +334,29 @@ function colors.generate(teal)
     colors.comment = ui.gray[600]
     colors.constant = ui.rose[500]
     colors.operator = ui.yellow[300]
-    colors.error = ui.red[400]
     colors.lsp_parameter = ui.rose[500]
+  elseif variation.mono then
+    colors.accent = ui.gray[400]
+    colors.bg = ui.gray[950]
+    colors.fg = ui.gray[350]
+    colors.ui = ui.gray[500]
+
+    colors.tag = ui.gray[400]
+    colors.func = ui.gray[300]
+    colors.entity = ui.gray[400]
+    colors.string = ui.gray[300]
+    colors.regexp = ui.gray[400]
+    colors.markup = ui.gray[400]
+    colors.keyword = ui.gray[400]
+    colors.delimiter = ui.gray[300]
+    colors.special = ui.gray[300]
+    colors.comment = ui.gray[600]
+    colors.constant = ui.gray[500]
+    colors.operator = ui.gray[300]
+    colors.lsp_parameter = ui.gray[500]
   end
 
+  colors.error = ui.red[400]
   colors.line = colors.black
   colors.panel_bg = colors.black
   colors.panel_shadow = colors.black

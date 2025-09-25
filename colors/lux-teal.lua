@@ -1,3 +1,3 @@
 vim.o.background = 'dark'
-require('lux.config').teal = true
+require('lux.config').variation = { teal = true }
 require('lux').colorscheme()
