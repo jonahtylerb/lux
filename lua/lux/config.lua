@@ -1,5 +1,6 @@
 local config = {
   defaults = {
+    teal = false,
     terminal = true,
     overrides = {},
   },

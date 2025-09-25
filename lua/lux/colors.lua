@@ -295,26 +295,49 @@ local ui = {
     [950] = '#4c0519',
   },
 }
-function colors.generate()
-  colors.accent = ui.orange[400]
-  colors.bg = ui.gray[950]
-  colors.fg = ui.gray[350]
-  colors.ui = ui.gray[500]
 
-  colors.tag = ui.sky[400]
-  colors.func = ui.amber[300]
-  colors.entity = ui.sky[400]
-  colors.string = ui.lime[300]
-  colors.regexp = ui.teal[400]
-  colors.markup = ui.rose[400]
-  colors.keyword = ui.orange[400]
-  colors.delimiter = ui.orange[300]
-  colors.special = ui.gray[300]
-  colors.comment = ui.gray[600]
-  colors.constant = ui.rose[500]
-  colors.operator = ui.yellow[300]
-  colors.error = ui.red[400]
-  colors.lsp_parameter = ui.rose[500]
+function colors.generate(teal)
+  if teal then
+    colors.accent = ui.teal[400]
+    colors.bg = ui.gray[950]
+    colors.fg = ui.gray[350]
+    colors.ui = ui.gray[500]
+
+    colors.tag = ui.orange[400]
+    colors.func = ui.lime[300]
+    colors.entity = ui.sky[400]
+    colors.string = ui.teal[600]
+    colors.regexp = ui.teal[600]
+    colors.markup = ui.teal[400]
+    colors.keyword = ui.teal[400]
+    colors.delimiter = ui.teal[600]
+    colors.special = ui.gray[300]
+    colors.comment = ui.gray[600]
+    colors.constant = ui.teal[500]
+    colors.operator = ui.gray[300]
+    colors.error = ui.red[400]
+    colors.lsp_parameter = ui.rose[500]
+  else
+    colors.accent = ui.orange[400]
+    colors.bg = ui.gray[950]
+    colors.fg = ui.gray[350]
+    colors.ui = ui.gray[500]
+
+    colors.tag = ui.sky[400]
+    colors.func = ui.amber[300]
+    colors.entity = ui.sky[400]
+    colors.string = ui.lime[300]
+    colors.regexp = ui.teal[400]
+    colors.markup = ui.rose[400]
+    colors.keyword = ui.orange[400]
+    colors.delimiter = ui.orange[300]
+    colors.special = ui.gray[300]
+    colors.comment = ui.gray[600]
+    colors.constant = ui.rose[500]
+    colors.operator = ui.yellow[300]
+    colors.error = ui.red[400]
+    colors.lsp_parameter = ui.rose[500]
+  end
 
   colors.line = colors.black
   colors.panel_bg = colors.black

@@ -356,7 +356,7 @@ function lux.colorscheme()
   vim.o.termguicolors = true
   vim.g.colors_name = 'lux'
 
-  colors.generate()
+  colors.generate(config.teal)
   if config.terminal then
     set_terminal_colors()
   end
