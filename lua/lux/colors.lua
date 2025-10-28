@@ -354,6 +354,25 @@ function colors.generate(variation)
     colors.constant = ui.gray[500]
     colors.operator = ui.gray[300]
     colors.lsp_parameter = ui.gray[500]
+  elseif variation.orange then
+    colors.accent = ui.orange[500]
+    colors.bg = ui.gray[950]
+    colors.fg = ui.gray[350]
+    colors.ui = ui.gray[500]
+
+    colors.tag = ui.orange[400]
+    colors.func = ui.yellow[300]
+    colors.entity = ui.sky[800]
+    colors.string = ui.orange[300]
+    colors.regexp = ui.teal[300]
+    colors.markup = ui.orange[700]
+    colors.keyword = ui.orange[700]
+    colors.delimiter = ui.orange[100]
+    colors.special = ui.gray[300]
+    colors.comment = ui.gray[600]
+    colors.constant = ui.orange[500]
+    colors.operator = ui.gray[300]
+    colors.lsp_parameter = ui.sky[500]
   end
 
   colors.error = ui.red[400]

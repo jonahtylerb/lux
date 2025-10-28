@@ -4,6 +4,7 @@ local config = {
       ayu = true,
       teal = false,
       mono = false,
+      orange = false,
     },
     terminal = true,
     overrides = {},
@@ -13,6 +14,7 @@ local config = {
       ayu = false,
       teal = false,
       mono = false,
+      orange = false,
     }
   end,
 }
