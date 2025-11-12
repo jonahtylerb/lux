@@ -392,8 +392,8 @@ function colors.generate(variation)
   colors.vcs_modified = ui.blue[500]
   colors.vcs_removed = ui.red[500]
 
-  colors.vcs_added_bg = ui.gray[600]
-  colors.vcs_removed_bg = ui.gray[400]
+  colors.vcs_added_bg = '#1F3622'
+  colors.vcs_removed_bg = '#4A2324'
 
   colors.fg_idle = ui.gray[400]
   colors.warning = ui.yellow[400]
